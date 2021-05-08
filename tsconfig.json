@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+
+    // import path alias
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "src/*": ["./src/*"],
+      "controllers/*": ["./src/controllers/*"],
+      "models/*": ["./src/models/*"],
+      "routes/*": ["./src/routes/*"],
+      "views/*": ["./src/views/*"],
+      // "interfaces": ["./interfaces.d.ts"],
+    },
+  }
+}
