@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import ROUTER from '~/src/routes';
-import getEnv from './utils/getEnv';
+import getEnv from './utils/get-env';
 
 const APP = express();
 const PORT = getEnv('PORT') || 8080;

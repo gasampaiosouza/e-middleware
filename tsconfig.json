@@ -16,7 +16,8 @@
       "models/*": ["./src/models/*"],
       "routes/*": ["./src/routes/*"],
       "views/*": ["./src/views/*"],
-      // "interfaces": ["./interfaces.d.ts"],
+      "utils/*": ["./src/utils/*"],
+      "interfaces": ["./interfaces.d.ts"],
     },
   }
 }
