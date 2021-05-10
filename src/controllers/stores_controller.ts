@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { IBodyType } from 'interfaces';
-import { CUSTOMERS_DATA } from 'src/content';
-import { parseBodyParams } from '~/src/utils/parse-body-params';
-import { catchAsyncErrors } from '../utils/catch-async-errors';
+import { CUSTOMERS_DATA } from '@src/content';
+import { parseBodyParams } from '@utils/parse-body-params';
+import { catchAsyncErrors } from '@utils/catch-async-errors';
 
 interface IUpdateType extends IBodyType {
 	data?: { [key: string]: string };
@@ -102,8 +102,6 @@ export default catchAsyncErrors({
 		});
 
 		const [TARGET_DOCUMENT] = document.data;
-
-		console.log(document, TARGET_DOCUMENT);
 
 		const response = await axios.patch(
 			`/api/dataentities/${acronym}/documents/${TARGET_DOCUMENT.id}`,

@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 
-import { getCorsOptions } from './utils/get-cors-options';
+import { getCorsOptions } from '@utils/get-cors-options';
 
-import StoresController from 'controllers/stores_controller';
+import StoresController from '@controllers/stores_controller';
 
 const ROUTER = express.Router();
 var CORS_OPTIONS = getCorsOptions();

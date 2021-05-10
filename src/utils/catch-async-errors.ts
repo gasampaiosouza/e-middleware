@@ -17,13 +17,12 @@ export function catchAsyncErrors(actions: IActions) {
 			try {
 				await actions[property](req, res, next);
 			} catch (error) {
-				console.log(error.toJSON());
+				if (error.hasOwnProperty('toJSON')) {
+					console.log(error.toJSON());
+				} else {
+					console.log(error);
+				}
 
-				// if (error.response) {
-				// 	res.status(error?.response?.status).send(error?.response?.data);
-				// }
-
-				// res.status(403).send({ message: 'Unknown error happened' });
 				next(error);
 			}
 		};

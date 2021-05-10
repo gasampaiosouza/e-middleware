@@ -11,13 +11,12 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "src/*": ["./src/*"],
-      "controllers/*": ["./src/controllers/*"],
-      "models/*": ["./src/models/*"],
-      "routes/*": ["./src/routes/*"],
-      "views/*": ["./src/views/*"],
-      "utils/*": ["./src/utils/*"],
-      "interfaces": ["./interfaces.d.ts"],
-    },
+      "@src/*": ["./src/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@models/*": ["./src/models/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@views/*": ["./src/views/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
   }
 }
