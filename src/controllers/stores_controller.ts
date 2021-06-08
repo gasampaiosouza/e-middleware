@@ -4,6 +4,8 @@ import { CUSTOMERS_DATA } from '@src/content';
 import { parseBodyParams } from '@utils/parse-body-params';
 import { catchAsyncErrors } from '@utils/catch-async-errors';
 
+import type { Request } from 'express';
+
 interface IUpdateType extends IBodyType {
 	data?: { [key: string]: string };
 }
@@ -20,8 +22,14 @@ const getRequestConfig = (currentStore: typeof CUSTOMERS_DATA[0]) => ({
 
 export default catchAsyncErrors({
 	async find(req, res, next) {
+		/*
+		REQ PARAMS:
+		- _where
+		- _fields
+		*/
+
 		const { acronym, store } = req.params;
-		const body: IBodyType = req.body;
+		const body: any = req.query;
 
 		const currentStore = CUSTOMERS_DATA[store];
 
