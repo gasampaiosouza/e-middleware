@@ -24,24 +24,28 @@ describe('request to all store routes should work as expected', () => {
 		return containsFields && checkKeysBasedOnFields;
 	};
 
+	
+	// POST
+	it('should create a new user', (done) => {
+		request(app)
+		.post(defaultRoute)
+		.send({ nome: 'middleware testing', email: 'middleware.testing@gmail.com' })
+		.expect(201)
+		.expect((res) => handleBodyValidation(res, ['Id', 'Href', 'DocumentId']))
+		.end(done);
+	});
+
+	// GET
 	it('should return the selected "_field" value ', (done) => {
 		request(app)
 			.get(defaultRoute)
-			.send({ _where: { email: 'deboracabralfarias@gmail.com' }, _fields: 'nome' })
+			.send({ _where: { email: 'middleware.testing@gmail.com' }, _fields: 'nome' })
 			.expect(200)
 			.expect((res) => handleBodyValidation(res, ['nome']))
 			.end(done);
 	});
 
-	it('should create a new user', (done) => {
-		request(app)
-			.post(defaultRoute)
-			.send({ nome: 'middleware testing', email: 'middleware.testing@gmail.com' })
-			.expect(201)
-			.expect((res) => handleBodyValidation(res, ['Id', 'Href', 'DocumentId']))
-			.end(done);
-	});
-
+	// PATCH
 	it('should update the created user', (done) => {
 		request(app)
 			.patch(defaultRoute)
@@ -54,6 +58,7 @@ describe('request to all store routes should work as expected', () => {
 			.end(done);
 	});
 
+	// DELETE
 	// it('should delete the specified user', (done) => {
 	// 	request(app)
 	// 		.patch(defaultRoute)

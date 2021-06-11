@@ -1,0 +1,1 @@
+At first, it was meant to handle LGPD blocked fields, like a GET to `/dataentities/CL` to get the user's birthDate.
