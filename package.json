@@ -11,6 +11,7 @@
     "tsc": "./node_modules/typescript/bin/tsc",
     "build": "tsc",
     "postinstall": "npm run build",
+    
     "heroku": "git add . && git commit -n -m \"change heroku settings\" && git push heroku master"
   },
   "keywords": [],
