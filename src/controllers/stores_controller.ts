@@ -3,6 +3,7 @@ import { IBodyType } from '../../interfaces';
 import { CUSTOMERS_DATA } from '../content';
 import { parseBodyParams } from '../utils/parse-body-params';
 import { catchAsyncErrors } from '../utils/catch-async-errors';
+import { URLSearchParams } from 'url';
 
 interface IUpdateType extends IBodyType {
 	data?: { [key: string]: string };
@@ -21,8 +22,9 @@ const getRequestConfig = (currentStore: typeof CUSTOMERS_DATA[0]) => ({
 export default catchAsyncErrors({
 	async find(req, res, next) {
 		const { acronym, store } = req.params;
-		const body: IBodyType = req.body;
-
+		const body: any = req.query;
+		const parsedQuery = Object.fromEntries(new URLSearchParams(body));
+		
 		const currentStore = CUSTOMERS_DATA[store];
 
 		if (!Object.keys(body).length) {
@@ -41,7 +43,7 @@ export default catchAsyncErrors({
 
 		const response = await axios.get(`/api/dataentities/${acronym}/search`, {
 			...getRequestConfig(currentStore),
-			params: parseBodyParams(body),
+			params: parsedQuery,
 		});
 
 		res.status(200).json({ success: true, data: response.data });
@@ -109,7 +111,9 @@ export default catchAsyncErrors({
 			getRequestConfig(currentStore)
 		);
 
-		res.status(204).json({ success: true, message: 'Resource updated successfully' });
+		res
+			.status(204)
+			.json({ success: true, message: 'Resource updated successfully' });
 	},
 
 	async delete(req, res, next) {
