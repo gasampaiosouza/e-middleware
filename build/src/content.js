@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CUSTOMERS_DATA = void 0;
+const CUSTOMERS_DATA = {
+    imaginarium: {
+        STORE_SITE: 'https://loja.imaginarium.com.br',
+        APP_KEY: 'vtexappkey-imaginarium-QSYLXA',
+        APP_TOKEN: 'ZIODZCAQEVCBYLMATIMPARUCRFZDOOMHQVOTVOFQCGHRHPWKEIXGKLQHNMLTDXCQIVLDWTEECVNUKDVBJPYGQGWEFHFJDLNFDRILETNKESDPYVWKRJKOYVZCZGYPNUBR',
+    },
+    aleatory: {
+        STORE_SITE: 'https://www.aleatorystore.com.br',
+        APP_KEY: 'vtexappkey-aleatory-ICHDNL',
+        APP_TOKEN: 'FPBYNCLJFCXZCFEZZERWFGMCMJAKIVKNLTWHUJNULOFGPFKUDJVUSTPYCYMEBAAKRKNIIWEQQXKRBGMGZGHZZPVSDYFVWJTLOUOFRBLGEEDUIYWWMFFUTAKBOVFKRJUH',
+    },
+};
+exports.CUSTOMERS_DATA = CUSTOMERS_DATA;
