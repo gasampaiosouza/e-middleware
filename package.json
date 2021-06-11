@@ -7,9 +7,10 @@
     "build"
   ],
   "scripts": {
+    "clean": "rm -rf /build",
     "start": "nodemon src/app.ts",
     "test": "jest -i --forceExit",
-    "build": "tsc"
+    "build": "yarn clean && tsc"
   },
   "keywords": [],
   "author": "",
