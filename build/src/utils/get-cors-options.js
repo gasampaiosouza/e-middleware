@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getCorsOptions = void 0;
-const content_1 = require("@src/content");
+const content_1 = require("../content");
 const get_env_1 = __importDefault(require("./get-env"));
 function getCorsOptions() {
     const localhost = get_env_1.default('NODE_ENV') !== 'production';

@@ -1,4 +1,4 @@
-import { IBodyType } from '~/interfaces';
+import { IBodyType } from '../../interfaces';
 
 export function parseBodyParams(params: IBodyType) {
 	const PARSED_BODY = Object.entries(params).map(([key, value]) => {

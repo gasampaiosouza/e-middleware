@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { CUSTOMERS_DATA } from '@src/content';
+import { CUSTOMERS_DATA } from '../content';
 import getEnv from './get-env';
 
 export function getCorsOptions() {

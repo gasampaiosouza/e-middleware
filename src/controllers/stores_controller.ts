@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { IBodyType } from 'interfaces';
-import { CUSTOMERS_DATA } from '@src/content';
-import { parseBodyParams } from '@utils/parse-body-params';
-import { catchAsyncErrors } from '@utils/catch-async-errors';
+import { IBodyType } from '../../interfaces';
+import { CUSTOMERS_DATA } from '../content';
+import { parseBodyParams } from '../utils/parse-body-params';
+import { catchAsyncErrors } from '../utils/catch-async-errors';
 
 interface IUpdateType extends IBodyType {
 	data?: { [key: string]: string };

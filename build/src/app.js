@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const routes_1 = __importDefault(require("@src/routes"));
-const get_env_1 = __importDefault(require("@utils/get-env"));
+const routes_1 = __importDefault(require("./routes"));
+const get_env_1 = __importDefault(require("./utils/get-env"));
 const APP = express_1.default();
 const PORT = get_env_1.default('PORT') || 8080;
 APP.use(express_1.default.json());

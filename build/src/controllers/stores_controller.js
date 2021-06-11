@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const content_1 = require("@src/content");
-const parse_body_params_1 = require("@utils/parse-body-params");
-const catch_async_errors_1 = require("@utils/catch-async-errors");
+const content_1 = require("../content");
+const parse_body_params_1 = require("../utils/parse-body-params");
+const catch_async_errors_1 = require("../utils/catch-async-errors");
 const getRequestConfig = (currentStore) => ({
     baseURL: currentStore.STORE_SITE,
     headers: {
