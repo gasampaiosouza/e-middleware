@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "pre-commit": [
-    "build-pre-commit"
-  ],
   "scripts": {
     "clean": "rm -rf /build",
     "start": "nodemon src/app.ts",
     "test": "jest -i --forceExit",
-    
-    "build-pre-commit": "yarn clean && tsc"
+    "postinstall": "npm run tsc"
   },
   "keywords": [],
   "author": "",
